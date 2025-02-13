@@ -1,2 +1,25 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+ion-content {
+    --ion-background-color: #f6f4ee;
+    direction: rtl;
+    text-align: right;
+    font-family: "IBM Plex Sans Arabic", serif !important;
+}
+
+/* Custom styles for radio buttons */
+.custom-radio:checked + span {
+    background-color: #ffc00a;
+    color: white;
+}
+
+.ibm-plex-sans-arabic-semibold {
+    font-family: "IBM Plex Sans Arabic", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+ 

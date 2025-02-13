@@ -1,20 +1,160 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="flex justify-center items-center min-h-screen">
+    <!-- Logo -->
+    <form id="active-form" class="space-y-8 w-full p-2 box-border" (submit)="getActivity()">
+      <div class="flex justify-center mt-4">
+        <div class="logo" style="transform: rotate(-15deg)">
+          <span class="text-4xl font-bold text-[#1d1d1c]">سُويْتْش</span>
+          <div class="logo-icon"></div>
+        </div>
+      </div>
+      <!-- Intensity -->
+      <div>
+        <h2 class="text-lg text-[#1d1d1c] font-semibold mb-3">نسبة الحماس</h2>
+        <div class="flex flex-wrap gap-3">
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="intensity"
+              value="low"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >منخفض</span
+            >
+          </label>
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="intensity"
+              value="mid"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >متوسط</span
+            >
+          </label>
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="intensity"
+              value="full"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >مرتفع</span
+            >
+          </label>
+        </div>
+      </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <!-- Duration -->
+      <div>
+        <h2 class="text-lg font-semibold mb-3 text-[#1d1d1c]">الوقت المتوفر</h2>
+        <div class="flex flex-wrap gap-3">
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="duration"
+              value="5min"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >5 دقائق</span
+            >
+          </label>
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="duration"
+              value="10min"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >10 دقائق</span
+            >
+          </label>
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="duration"
+              value="10plus"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >+10 دقائق</span
+            >
+          </label>
+        </div>
+      </div>
+
+      <!-- Type -->
+      <div>
+        <h2 class="text-lg font-semibold mb-3 text-[#1d1d1c]">نوع النشاط</h2>
+        <div class="flex flex-wrap gap-3">
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="type"
+              value="internal"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >داخلي</span
+            >
+          </label>
+          <label class="flex-1">
+            <input
+              type="radio"
+              name="type"
+              value="external"
+              class="custom-radio sr-only"
+            />
+            <span
+              class="flex items-center justify-center px-4 py-3 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
+              >خارجي</span
+            >
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center mt-8">
+        <button #submitBtn
+          id="submit-btn"
+          type="submit"
+          class="w-full max-w-xs px-6 py-3 bg-primary text-white rounded-md text-lg font-semibold hover:bg-primary/90 active:bg-primary/80 transition-colors"
+        ></button>
+      </div>
+      <p class="text-[0.6rem] text-red-500 font-bold text-center mt-5">
+        صُنع بحب : عبد الرحمن الغامدي
+      </p>
+    </form>
   </div>
+
+
+
+  <svg
+    style="position: fixed;" class="bottom-0 left-0 w-full mt-8 z-[-10]"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+  >
+    <path
+      fill="#ffc00a"
+      fill-opacity="1"
+      d="M0,32L48,53.3C96,75,192,117,288,112C384,107,480,53,576,48C672,43,768,85,864,96C960,107,1056,85,1152,90.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      style="
+        --darkreader-inline-fill: var(--darkreader-background-ffc00a, #956e00);
+      "
+      data-darkreader-inline-fill=""
+    ></path>
+  </svg>
+
 </ion-content>
