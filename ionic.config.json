@@ -1,0 +1,7 @@
+{
+  "name": "switch",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
