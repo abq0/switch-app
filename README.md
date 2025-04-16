@@ -14,8 +14,7 @@ This application helps users select activities based on their mood, available ti
 
 ## Technology Stack
 
--   **Framework:** Angular
--   **UI Library:** Ionic
+-   **Framework:** Angular Ionic
 -   **Styling:** Tailwind CSS
 -   **Alerts:** SweetAlert2
 -   **Language:** TypeScript
