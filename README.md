@@ -61,5 +61,10 @@ Before running the application, ensure you have the following installed:
     a.  Add the Android platform:
 
      ```bash
+    ionic cordova platform add android
+    ```
+
+     b.  Build app for Android:  
+     ```bash
     ionic cordova build android
     ```
