@@ -1,0 +1,121 @@
+<ion-content [fullscreen]="true" class="relative">
+  <!-- Back Button -->
+  <div class="absolute top-4 left-4 z-10">
+    <button
+      (click)="goBack()"
+      class="flex items-center p-2 bg-[#efede8] rounded-full hover:bg-[#dfddd8] transition-colors"
+    >
+      <span class="text-sm font-semibold text-gray-700">العودة</span>
+      <img
+        src="../../assets/emojis/arrow.png"
+        alt="Back"
+        width="20"
+        height="20"
+        class="ms-2"
+      />
+    </button>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] dark:bg-[#374151] px-4 py-4">
+    <!-- Content Box with max-width and padding -->
+    <div class="w-full max-w-md md:max-w-2xl space-y-5 py-4">
+      <!-- Title with safe margins -->
+      <div class="flex justify-center pb-5 px-2">
+        <div class="logo" style="transform: rotate(-15deg)">
+          <span class="text-2xl md:text-3xl font-bold text-[#1d1d1c] dark:text-white">
+            معلومات المطور
+          </span>
+        </div>
+      </div>
+
+      <!-- Info Card with constrained width -->
+      <div class="rounded-lg shadow-sm p-4 md:p-5 dark:bg-gray-800 bg-white mx-auto w-full">
+        <!-- Logo -->
+        <div class="flex justify-center mb-4">
+          <div class="w-50 md:w-24">
+            <img class="dark:hidden w-full" src="../../assets/logo.svg" alt="">
+            <img class="dark:block hidden w-full" src="../../assets/logo-dark.svg" alt="">
+          </div>
+        </div>
+        <!-- Information Rows -->
+        <div class="space-y-4">
+          <!-- Row 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 px-2">
+            <div>
+              <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">الاسم</p>
+              <p class="text-sm md:text-base font-medium text-gray-900 dark:text-white">
+                عبد الرحمن الغامدي
+              </p>
+            </div>
+            <div>
+              <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">
+                الرقم الاكاديمي
+              </p>
+              <p class="text-sm md:text-base font-medium text-gray-900 dark:text-white">
+                443330046
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 px-2">
+            <div>
+              <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">المادة</p>
+              <p class="text-sm md:text-base font-medium text-gray-900 dark:text-white">
+                برمج 454
+              </p>
+            </div>
+            <div>
+              <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">الكلية</p>
+              <p class="text-sm md:text-base font-medium text-gray-900 dark:text-white">
+                كلية الاتصالات والمعلومات
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Button -->
+      <div class="mt-4 px-2">
+        <h2 class="text-base md:text-lg font-semibold mb-2 text-[#1d1d1c] dark:text-white">
+          صفحة المشروع
+        </h2>
+        <a
+          href="https://github.com/abq0/switch-app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[#010409] flex items-center justify-center p-2 rounded-md w-full"
+        >
+          <svg
+            height="24"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            version="1.1"
+            width="24"
+            class="fill-[#fff] me-2"
+          >
+            <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
+          </svg>
+          <span class="text-white text-sm md:text-base">Github</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<!-- Wave SVG (positioned absolutely at bottom) -->
+  <div class="absolute bottom-0 left-0 w-full z-0">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="w-full h-[80px] md:h-[100px] dark:bg-[#374151]"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="fill-[#ffc00a]"
+        fill-opacity="1"
+        d="M0,32L48,53.3C96,75,192,117,288,112C384,107,480,53,576,48C672,43,768,85,864,96C960,107,1056,85,1152,90.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+</ion-content>

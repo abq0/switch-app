@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true" class="relative">
+  <!-- Back Button -->
+  <div class="absolute top-4 left-4 z-10">
+    <button
+      (click)="goBack()"
+      class="flex items-center p-2 bg-[#efede8] rounded-full hover:bg-[#dfddd8] transition-colors"
+    >
+      <span class="text-sm font-semibold text-gray-700">العودة</span>
+      <img
+        src="../../assets/emojis/arrow.png"
+        alt="Back"
+        width="20"
+        height="20"
+        class="ms-2"
+      />
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] dark:bg-[#374151] px-4 py-4">
+    <div class="w-full max-w-md md:max-w-xl space-y-5 py-4">
+      <!-- Title -->
+      <div class="flex justify-center px-2">
+        <div class="logo" style="transform: rotate(-15deg)">
+          <span class="text-2xl md:text-3xl font-bold text-[#1d1d1c] dark:text-white">
+            الإعدادات
+          </span>
+        </div>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="px-2">
+        <h2 class="text-base md:text-lg font-semibold mb-2 text-[#1d1d1c] dark:text-white">
+          المظهر
+        </h2>
+        <div>
+          <button
+            (click)="toggleTheme()"
+            class="dark:bg-[#ffc00a] bg-[#374151] flex items-center justify-center p-2 rounded-md w-full transition-colors"
+          >
+            <span class="dark:text-black text-white text-sm md:text-base">
+              {{ isDarkTheme ? 'الفاتح' : 'الداكن' }}
+            </span>
+            <img
+              [src]="isDarkTheme ? '../../assets/emojis/sunface.png' : '../../assets/emojis/moonface.png'"
+              width="20"
+              height="20"
+              class="ms-2"
+            />
+          </button>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="px-2 text-[#1d1d1c] dark:text-white">
+        <h2 class="text-base md:text-lg font-semibold mb-2">نبذة :</h2>
+        <div class="text-sm md:text-base leading-relaxed">
+          <strong>سويتش</strong> هو تطبيق ذكي وبسيط مصمم لمساعدتك في اختيار
+          الأنشطة التي تناسبك بناءً على حالتك المزاجية، والوقت المتاح لديك، ونوع
+          النشاط الذي تفضله. سواء كنت تبحث عن شيء ممتع تفعله في وقت قصير أو ترغب
+          في تجربة نشاط جديد يناسب مزاجك، فإن <strong>سويتش</strong> يوفر لك
+          اقتراحات ملائمة تساعدك على الاستمتاع بوقتك واتخاذ قرارات أسهل.
+        </div>
+      </div>
+
+      <!-- Developer Button -->
+      <div class="px-2">
+        <button
+          (click)="navigateToDeveloper()"
+          class="bg-[#010409] flex items-center justify-center p-2 rounded-md w-full transition-colors"
+        >
+          <span class="text-white text-sm md:text-base">معلومات المطور</span>
+          <img
+            src="https://em-content.zobj.net/source/microsoft-teams/363/technologist-light-skin-tone_1f9d1-1f3fb-200d-1f4bb.png"
+            width="20"
+            height="20"
+            class="ms-2"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+
+<!-- Wave SVG (positioned absolutely at bottom) -->
+  <div class="absolute bottom-0 left-0 w-full z-0">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="w-full h-[80px] md:h-[100px] dark:bg-[#374151]"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="fill-[#ffc00a]"
+        fill-opacity="1"
+        d="M0,32L48,53.3C96,75,192,117,288,112C384,107,480,53,576,48C672,43,768,85,864,96C960,107,1056,85,1152,90.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+</ion-content>

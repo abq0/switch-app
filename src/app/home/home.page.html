@@ -1,6 +1,6 @@
-<ion-content [fullscreen]="true">
-  <!-- Settings -->
-  <div class="absolute top-4 left-4">
+<ion-content [fullscreen]="true" class="relative">
+  <!-- Settings Button -->
+  <div class="absolute top-4 left-4 z-10">
     <button
       (click)="navigateToSettings()"
       class="p-2 bg-[#efede8] rounded-full hover:bg-[#dfddd8] transition-colors"
@@ -14,203 +14,131 @@
     </button>
   </div>
 
-
-  <div class="flex justify-center items-center min-h-screen dark:bg-[#374151]">
-    <!-- Logo -->
-    <form id="active-form" class="space-y-8 w-full p-2 box-border mb-[5rem]">
-      <div class="flex justify-center mt-4">
+  <!-- Main Content -->
+  <div class="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 pb-8 dark:bg-[#374151]">
+    <div class="w-full max-w-md md:max-w-xl space-y-5 py-4">
+      <!-- Logo -->
+      <div class="flex justify-center">
         <div class="logo" style="transform: rotate(-15deg)">
-          <span class="text-4xl font-bold text-[#1d1d1c] dark:text-white">سويتش</span>
+          <span class="text-3xl md:text-4xl font-bold text-[#1d1d1c] dark:text-white">سويتش</span>
           <div class="logo-icon"></div>
         </div>
       </div>
+
       <!-- Intensity -->
-      <div class="mb-6">
-        <h2 class="text-lg text-[#1d1d1c] font-semibold mb-3 dark:text-white">نسبة الحماس</h2>
-        <div class="flex flex-wrap gap-3">
-          <label class="flex-1 min-w-[150px]">
-            <input
-              type="radio"
-              name="intensity"
-              value="low"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >منخفض
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/downcast-face-with-sweat_1f613.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+      <div class="px-2">
+        <h2 class="text-base md:text-lg font-semibold mb-2 text-[#1d1d1c] dark:text-white">نسبة الحماس</h2>
+        <div class="flex flex-wrap justify-center gap-2">
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="intensity" value="low" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              منخفض
+              <img src="../../assets/emojis/downcast-face-with-sweat_1f613.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
-          <label class="flex-1 min-w-[150px]">
-            <input
-              type="radio"
-              name="intensity"
-              value="mid"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >متوسط
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/face-with-raised-eyebrow_1f928.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="intensity" value="mid" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              متوسط
+              <img src="../../assets/emojis/face-with-raised-eyebrow_1f928.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
-          <label class="flex-1 min-w-[150px]">
-            <input
-              type="radio"
-              name="intensity"
-              value="full"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >مرتفع
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/star-struck_1f929.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="intensity" value="full" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              مرتفع
+              <img src="../../assets/emojis/star-struck_1f929.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
         </div>
       </div>
 
       <!-- Duration -->
-      <div>
-        <h2 class="text-lg font-semibold mb-3 text-[#1d1d1c] dark:text-white">الوقت المتوفر</h2>
-        <div class="flex flex-wrap gap-3">
-          <label class="flex-1 min-w-[150px]">
-            <input
-              type="radio"
-              name="duration"
-              value="5min"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >5 دقائق
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/alarm-clock_23f0.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+      <div class="px-2">
+        <h2 class="text-base md:text-lg font-semibold mb-2 text-[#1d1d1c] dark:text-white">الوقت المتوفر</h2>
+        <div class="flex flex-wrap justify-center gap-2">
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="duration" value="5min" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              5 دقائق
+              <img src="../../assets/emojis/alarm-clock_23f0.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
-          <label class="flex-1 min-w-[150px]">
-            <input
-              type="radio"
-              name="duration"
-              value="10min"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >10 دقائق
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/hourglass-done_231b.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="duration" value="10min" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              10 دقائق
+              <img src="../../assets/emojis/hourglass-done_231b.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
-          <label class="flex-1 min-w-[150px]">
-            <input
-              type="radio"
-              name="duration"
-              value="10plus"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >+10 دقائق
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/mantelpiece-clock_1f570-fe0f.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="duration" value="10plus" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              +10 دقائق
+              <img src="../../assets/emojis/mantelpiece-clock_1f570-fe0f.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
         </div>
       </div>
 
       <!-- Type -->
-      <div>
-        <h2 class="text-lg font-semibold mb-3 text-[#1d1d1c] dark:text-white">نوع النشاط</h2>
-        <div class="flex flex-wrap gap-3">
-          <label class="flex-1">
-            <input
-              type="radio"
-              name="type"
-              value="internal"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >داخلي
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/house_1f3e0.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+      <div class="px-2">
+        <h2 class="text-base md:text-lg font-semibold mb-2 text-[#1d1d1c] dark:text-white">نوع النشاط</h2>
+        <div class="flex flex-wrap justify-center gap-2">
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="type" value="internal" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              داخلي
+              <img src="../../assets/emojis/house_1f3e0.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
-          <label class="flex-1">
-            <input
-              type="radio"
-              name="type"
-              value="external"
-              class="custom-radio sr-only"
-            />
-            <span
-              class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full"
-              >خارجي
-              <img
-                src="https://em-content.zobj.net/source/microsoft-teams/363/person-running_medium-light-skin-tone_1f3c3-1f3fc_1f3fc.png"
-                width="20px"
-                class="ms-2"
-            /></span>
+          <label class="min-w-[150px] flex-1">
+            <input type="radio" name="type" value="external" class="custom-radio sr-only"/>
+            <span class="flex items-center justify-center p-2 rounded-md cursor-pointer transition-colors bg-[#efede8] text-gray-700 hover:bg-gray-200 w-full text-sm md:text-base">
+              خارجي
+              <img src="../../assets/emojis/person-running_medium-light-skin-tone_1f3c3-1f3fc_1f3fc.png" width="20" height="20" class="ms-2"/>
+            </span>
           </label>
         </div>
       </div>
 
-      <!-- Submit Button -->
-      <div class="flex justify-center mt-8">
-        <button style="display: ruby;"
-          #submitBtn
-          (click)="getActivity('submit')"
-          id="submit-btn"
-          type="submit"
-          class="w-full max-w-xs px-6 py-3 bg-primary text-white rounded-md text-lg font-semibold hover:bg-primary/90 active:bg-primary/80 transition-colors"
-        ></button>
+      <!-- Buttons -->
+      <div class="px-2 space-y-3 mt-6">
+        <div class="flex justify-center">
+          <button
+            #submitBtn
+            (click)="getActivity('submit')"
+            class="w-full max-w-xs px-6 py-3 bg-primary text-white rounded-md text-lg font-semibold hover:bg-primary/90 active:bg-primary/80 transition-colors"
+          ></button>
+        </div>
+        
+        <div class="flex justify-center">
+          <button
+            #randomSubmitBtn
+            (click)="getActivity('random')"
+            class="w-full max-w-xs px-6 py-3 bg-[#efede8] text-gray-700 rounded-md text-lg font-semibold hover:text-white hover:bg-primary/90 active:bg-primary/80 transition-colors"
+          >
+            اقترح لي عشوائيًا
+            <img src="../../assets/emojis/sparkles.png" width="20" height="20" class="ms-1 inline align-middle"/>
+          </button>
+        </div>
       </div>
-      <div class="flex justify-center mt-8">
-        <button
-          #randomSubmitBtn
-          (click)="getActivity('random')"
-          id="randSubmitBtn"
-          type="submit"
-          style="display: ruby;" class="outline-4 w-full max-w-xs px-6 py-3 bg-[#efede8] text-gray-700 rounded-md text-lg font-semibold hover:text-white hover:bg-primary/90 active:bg-primary/80 transition-colors"
-        >
-          اقترح لي عشوائيًا <img src="../../assets/emojis/sparkles.png" width="20px" class="ms-1 mb-1">
-        </button>
-      </div>
-      <p class="text-[0.6rem] text-red-500 font-bold text-center mt-5">
-        صُنع بحب : عبد الرحمن الغامدي
-      </p>
-    </form>
+    </div>
   </div>
 
-  <svg
-    style="position: fixed"
-    class="bottom-0 left-0 w-full mt-8"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 1440 320"
-  >
-    <path
-      class="fill-[#ffc00a]"
-      fill-opacity="1"
-      d="M0,32L48,53.3C96,75,192,117,288,112C384,107,480,53,576,48C672,43,768,85,864,96C960,107,1056,85,1152,90.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-      data-darkreader-inline-fill=""
-    ></path>
-  </svg>
+<!-- Wave SVG (positioned absolutely at bottom) -->
+  <div class="absolute bottom-0 left-0 w-full z-0">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="w-full h-[80px] md:h-[100px] dark:bg-[#374151]"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="fill-[#ffc00a]"
+        fill-opacity="1"
+        d="M0,32L48,53.3C96,75,192,117,288,112C384,107,480,53,576,48C672,43,768,85,864,96C960,107,1056,85,1152,90.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
 </ion-content>
