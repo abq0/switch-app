@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   },
+  {
+    path: 'developer',
+    loadChildren: () => import('./developer/developer.module').then( m => m.DeveloperPageModule)
+  },
 ];
 
 @NgModule({

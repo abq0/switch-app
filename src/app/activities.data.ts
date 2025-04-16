@@ -23,7 +23,6 @@ export const activities = [
     { intensity: "full", duration: "10plus", type: "internal", activity: "تدريب كارديو عالي الكثافة لمدة 30 دقيقة" },
     { intensity: "full", duration: "10plus", type: "external", activity: "سباق الجري لمسافة 5 كيلومتر" },
   
-    // إضافة المزيد من الأنشطة لتغطية جميع التشكيلات
     { intensity: "low", duration: "5min", type: "external", activity: "التحدث مع صديق في الحديقة" },
     { intensity: "low", duration: "10min", type: "external", activity: "التنزه في الشاطئ" },
     { intensity: "low", duration: "10plus", type: "internal", activity: "قراءة رواية طويلة" },
@@ -43,7 +42,6 @@ export const activities = [
     { intensity: "full", duration: "10plus", type: "internal", activity: "تمارين القوة المتقدمة" },
     { intensity: "full", duration: "10plus", type: "external", activity: "سباق الماراثون" },
   
-    // المزيد من الأنشطة
     { intensity: "low", duration: "5min", type: "internal", activity: "تمارين إطالة للظهر" },
     { intensity: "low", duration: "5min", type: "external", activity: "التنزه في منطقة سكنية" },
     { intensity: "low", duration: "10min", type: "internal", activity: "الاستماع إلى بودكاست" },
@@ -52,11 +50,9 @@ export const activities = [
     { intensity: "low", duration: "10plus", type: "external", activity: "التنزه في منطقة ساحلية" },
   
     { intensity: "mid", duration: "5min", type: "internal", activity: "تمارين القرفصاء" },
-    { intensity: "mid", duration: "5min", type: "external", activity: "الركض في الصحراء" },
     { intensity: "mid", duration: "10min", type: "internal", activity: "تمارين التوازن على قدم واحدة" },
     { intensity: "mid", duration: "10min", type: "external", activity: "الركض في الشاطئ" },
     { intensity: "mid", duration: "10plus", type: "internal", activity: "تمارين القوة مع الأثقال" },
-    { intensity: "mid", duration: "10plus", type: "external", activity: "الركض في منطقة صناعية" },
   
     { intensity: "full", duration: "5min", type: "internal", activity: "تمارين السكوات السريعة" },
     { intensity: "full", duration: "5min", type: "external", activity: "الركض السريع في الريف" },
