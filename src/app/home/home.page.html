@@ -126,7 +126,83 @@
     </div>
   </div>
 
-<!-- Wave SVG (positioned absolutely at bottom) -->
+  <!-- Activity Modal -->
+  <div *ngIf="showActivityModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div
+    [ngClass]="{
+      'opacity-100 translate-y-0 scale-100': modalVisible,
+      'opacity-0 translate-y-8 scale-95': !modalVisible
+    }"
+    class="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col transform transition-all duration-300 ease-out"
+  >
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center p-4 border-b dark:border-gray-700">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white">النشاط المقترح</h3>
+        <button 
+          (click)="closeActivityModal()"
+          class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Modal Content -->
+      <div class="p-6 overflow-y-auto flex-1">
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">النشاط:</h4>
+            <p class="text-xl font-bold text-primary dark:text-[#ffc00a]">{{ selectedActivity?.activity }}</p>
+          </div>
+          
+          <div class="flex justify-between items-center">
+            <div>
+              <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">النوع:</h4>
+              <div class="flex items-center">
+                <span class="px-3 py-1 rounded-full text-sm font-medium"
+                  [class.bg-blue-100]="selectedActivity?.type === 'internal'"
+                  [class.text-blue-800]="selectedActivity?.type === 'internal'"
+                  [class.bg-green-100]="selectedActivity?.type === 'external'"
+                  [class.text-green-800]="selectedActivity?.type === 'external'"
+                >
+                  {{ selectedActivity?.type === 'internal' ? 'داخلي' : 'خارجي' }}
+                </span>
+                <img 
+                  [src]="selectedActivity?.type === 'internal' ? '../../assets/emojis/house_1f3e0.png' : '../../assets/emojis/person-running_medium-light-skin-tone_1f3c3-1f3fc_1f3fc.png'" 
+                  width="24" 
+                  height="24" 
+                  class="ms-2"
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">المكان المقترح:</h4>
+              <p class="text-gray-800 dark:text-gray-200 leading-relaxed">{{ selectedActivity?.locationTips }}</p>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">الوصف:</h4>
+            <p class="text-gray-800 dark:text-gray-200 leading-relaxed">{{ selectedActivity?.desc }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="p-4 border-t dark:border-gray-700 flex justify-end">
+        <button
+          (click)="closeActivityModal()"
+          class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors"
+        >
+          حسناً
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave SVG -->
   <div class="absolute bottom-0 left-0 w-full z-0">
     <svg
       xmlns="http://www.w3.org/2000/svg"
