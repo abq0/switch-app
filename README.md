@@ -27,7 +27,7 @@ Before running the application, ensure you have the following installed:
 -   **Node.js:** (version 16 or higher) - [https://nodejs.org/](https://nodejs.org/)
 -   **npm:** (usually comes with Node.js) or yarn:  [https://yarnpkg.com/](https://yarnpkg.com/)
 -   **Angular CLI:**  Install globally using `npm install -g @angular/cli`
--   **Ionic CLI:** Install globally using `npm install -g @ionic/cli`
+-   **Ionic CLI:** Install globally with `npm install -g @ionic/cli`, or locally with `npm install --save-dev @ionic/cli` and use via `npm run ionic`.
 -   **Capacitor CLI:** Install globally using `npm install -g @capacitor/cli`
 -   **Android Studio:** (If building for Android) - [https://developer.android.com/studio](https://developer.android.com/studio)
 
